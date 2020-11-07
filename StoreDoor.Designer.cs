@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -40,7 +41,27 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.movedbDataSet = new _2009_1956_DoorAndWindow.movedbDataSet();
+            this.двернойБлокBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.дверной_блокTableAdapter = new _2009_1956_DoorAndWindow.movedbDataSetTableAdapters.дверной_блокTableAdapter();
+            this.изготовлениеДверныхБлоковBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.изготовление_дверных_блоковTableAdapter = new _2009_1956_DoorAndWindow.movedbDataSetTableAdapters.изготовление_дверных_блоковTableAdapter();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.пользователиBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.пользователиTableAdapter = new _2009_1956_DoorAndWindow.movedbDataSetTableAdapters.пользователиTableAdapter();
+            this.кодDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.двернойБлокDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.количествоDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.датаИзготовленияDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.кемИзготовленоDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.movedbDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.двернойБлокBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.изготовлениеДверныхБлоковBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.пользователиBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -50,39 +71,54 @@
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.кодDataGridViewTextBoxColumn,
+            this.двернойБлокDataGridViewTextBoxColumn,
+            this.количествоDataGridViewTextBoxColumn,
+            this.датаИзготовленияDataGridViewTextBoxColumn,
+            this.кемИзготовленоDataGridViewTextBoxColumn,
+            this.Column1,
+            this.Column2});
+            this.dataGridView1.DataSource = this.изготовлениеДверныхБлоковBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(148, 9);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(540, 297);
+            this.dataGridView1.Size = new System.Drawing.Size(573, 345);
             this.dataGridView1.TabIndex = 19;
+            this.dataGridView1.Click += new System.EventHandler(this.dataGridView1_Click);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(12, 209);
+            this.button3.Location = new System.Drawing.Point(12, 252);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(121, 23);
             this.button3.TabIndex = 18;
             this.button3.Text = "Удалить";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(12, 180);
+            this.button2.Location = new System.Drawing.Point(12, 223);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(121, 23);
             this.button2.TabIndex = 17;
             this.button2.Text = "Изменить";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 151);
+            this.button1.Location = new System.Drawing.Point(12, 194);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(121, 23);
             this.button1.TabIndex = 16;
             this.button1.Text = "Добавить";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label3
             // 
@@ -107,6 +143,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(121, 20);
             this.textBox1.TabIndex = 13;
+            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // label2
             // 
@@ -119,11 +156,15 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.DataSource = this.двернойБлокBindingSource;
+            this.comboBox1.DisplayMember = "Название";
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(12, 25);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 11;
+            this.comboBox1.ValueMember = "Код";
             // 
             // label1
             // 
@@ -136,7 +177,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(11, 241);
+            this.button4.Location = new System.Drawing.Point(11, 284);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(121, 23);
             this.button4.TabIndex = 20;
@@ -146,7 +187,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(12, 270);
+            this.button5.Location = new System.Drawing.Point(12, 313);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(121, 36);
             this.button5.TabIndex = 21;
@@ -154,11 +195,122 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
+            // movedbDataSet
+            // 
+            this.movedbDataSet.DataSetName = "movedbDataSet";
+            this.movedbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // двернойБлокBindingSource
+            // 
+            this.двернойБлокBindingSource.DataMember = "дверной блок";
+            this.двернойБлокBindingSource.DataSource = this.movedbDataSet;
+            // 
+            // дверной_блокTableAdapter
+            // 
+            this.дверной_блокTableAdapter.ClearBeforeFill = true;
+            // 
+            // изготовлениеДверныхБлоковBindingSource
+            // 
+            this.изготовлениеДверныхБлоковBindingSource.DataMember = "изготовление дверных блоков";
+            this.изготовлениеДверныхБлоковBindingSource.DataSource = this.movedbDataSet;
+            // 
+            // изготовление_дверных_блоковTableAdapter
+            // 
+            this.изготовление_дверных_блоковTableAdapter.ClearBeforeFill = true;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.DataSource = this.пользователиBindingSource;
+            this.comboBox2.DisplayMember = "ФИО";
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(11, 168);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(121, 21);
+            this.comboBox2.TabIndex = 23;
+            this.comboBox2.ValueMember = "Код";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(8, 152);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(95, 13);
+            this.label4.TabIndex = 22;
+            this.label4.Text = "Кем изготовлено";
+            // 
+            // пользователиBindingSource
+            // 
+            this.пользователиBindingSource.DataMember = "пользователи";
+            this.пользователиBindingSource.DataSource = this.movedbDataSet;
+            // 
+            // пользователиTableAdapter
+            // 
+            this.пользователиTableAdapter.ClearBeforeFill = true;
+            // 
+            // кодDataGridViewTextBoxColumn
+            // 
+            this.кодDataGridViewTextBoxColumn.DataPropertyName = "Код";
+            this.кодDataGridViewTextBoxColumn.HeaderText = "Код";
+            this.кодDataGridViewTextBoxColumn.Name = "кодDataGridViewTextBoxColumn";
+            this.кодDataGridViewTextBoxColumn.ReadOnly = true;
+            this.кодDataGridViewTextBoxColumn.Width = 51;
+            // 
+            // двернойБлокDataGridViewTextBoxColumn
+            // 
+            this.двернойБлокDataGridViewTextBoxColumn.DataPropertyName = "Дверной блок";
+            this.двернойБлокDataGridViewTextBoxColumn.HeaderText = "Дверной блок";
+            this.двернойБлокDataGridViewTextBoxColumn.Name = "двернойБлокDataGridViewTextBoxColumn";
+            this.двернойБлокDataGridViewTextBoxColumn.ReadOnly = true;
+            this.двернойБлокDataGridViewTextBoxColumn.Visible = false;
+            this.двернойБлокDataGridViewTextBoxColumn.Width = 104;
+            // 
+            // количествоDataGridViewTextBoxColumn
+            // 
+            this.количествоDataGridViewTextBoxColumn.DataPropertyName = "Количество";
+            this.количествоDataGridViewTextBoxColumn.HeaderText = "Количество";
+            this.количествоDataGridViewTextBoxColumn.Name = "количествоDataGridViewTextBoxColumn";
+            this.количествоDataGridViewTextBoxColumn.ReadOnly = true;
+            this.количествоDataGridViewTextBoxColumn.Width = 91;
+            // 
+            // датаИзготовленияDataGridViewTextBoxColumn
+            // 
+            this.датаИзготовленияDataGridViewTextBoxColumn.DataPropertyName = "Дата изготовления";
+            this.датаИзготовленияDataGridViewTextBoxColumn.HeaderText = "Дата изготовления";
+            this.датаИзготовленияDataGridViewTextBoxColumn.Name = "датаИзготовленияDataGridViewTextBoxColumn";
+            this.датаИзготовленияDataGridViewTextBoxColumn.ReadOnly = true;
+            this.датаИзготовленияDataGridViewTextBoxColumn.Width = 120;
+            // 
+            // кемИзготовленоDataGridViewTextBoxColumn
+            // 
+            this.кемИзготовленоDataGridViewTextBoxColumn.DataPropertyName = "Кем изготовлено";
+            this.кемИзготовленоDataGridViewTextBoxColumn.HeaderText = "Кем изготовлено";
+            this.кемИзготовленоDataGridViewTextBoxColumn.Name = "кемИзготовленоDataGridViewTextBoxColumn";
+            this.кемИзготовленоDataGridViewTextBoxColumn.ReadOnly = true;
+            this.кемИзготовленоDataGridViewTextBoxColumn.Visible = false;
+            this.кемИзготовленоDataGridViewTextBoxColumn.Width = 110;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Дверной блок";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 96;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Кем изготовлено";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 110;
+            // 
             // StoreDoor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(700, 318);
+            this.ClientSize = new System.Drawing.Size(733, 366);
+            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.dataGridView1);
@@ -174,7 +326,12 @@
             this.Name = "StoreDoor";
             this.Text = "Учет дверей";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.StoreDoor_FormClosing);
+            this.Load += new System.EventHandler(this.StoreDoor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.movedbDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.двернойБлокBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.изготовлениеДверныхБлоковBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.пользователиBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -194,5 +351,21 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
+        private movedbDataSet movedbDataSet;
+        private System.Windows.Forms.BindingSource двернойБлокBindingSource;
+        private movedbDataSetTableAdapters.дверной_блокTableAdapter дверной_блокTableAdapter;
+        private System.Windows.Forms.BindingSource изготовлениеДверныхБлоковBindingSource;
+        private movedbDataSetTableAdapters.изготовление_дверных_блоковTableAdapter изготовление_дверных_блоковTableAdapter;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.BindingSource пользователиBindingSource;
+        private movedbDataSetTableAdapters.пользователиTableAdapter пользователиTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn кодDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn двернойБлокDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn количествоDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn датаИзготовленияDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn кемИзготовленоDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
     }
 }
