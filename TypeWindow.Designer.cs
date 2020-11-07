@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -48,7 +49,33 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.movedbDataSet = new _2009_1956_DoorAndWindow.movedbDataSet();
+            this.оконныйБлокBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.оконный_блокTableAdapter = new _2009_1956_DoorAndWindow.movedbDataSetTableAdapters.оконный_блокTableAdapter();
+            this.кодDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.названиеDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ширинаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.высотаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.материалDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.створкиDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.направлениеОткрытияDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.проветриваниеDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ценаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.материалыДляОконBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.материалы_для_оконTableAdapter = new _2009_1956_DoorAndWindow.movedbDataSetTableAdapters.материалы_для_оконTableAdapter();
+            this.створкиBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.створкиTableAdapter = new _2009_1956_DoorAndWindow.movedbDataSetTableAdapters.створкиTableAdapter();
+            this.направлениеОткрытияОкнаBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.направление_открытия_окнаTableAdapter = new _2009_1956_DoorAndWindow.movedbDataSetTableAdapters.направление_открытия_окнаTableAdapter();
+            this.проветриваниеBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.проветриваниеTableAdapter = new _2009_1956_DoorAndWindow.movedbDataSetTableAdapters.проветриваниеTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.movedbDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.оконныйБлокBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.материалыДляОконBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.створкиBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.направлениеОткрытияОкнаBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.проветриваниеBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -117,19 +144,27 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.DataSource = this.материалыДляОконBindingSource;
+            this.comboBox1.DisplayMember = "Материал";
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(17, 75);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(141, 21);
             this.comboBox1.TabIndex = 8;
+            this.comboBox1.ValueMember = "Материал";
             // 
             // comboBox2
             // 
+            this.comboBox2.DataSource = this.створкиBindingSource;
+            this.comboBox2.DisplayMember = "Название";
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(164, 75);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(141, 21);
             this.comboBox2.TabIndex = 10;
+            this.comboBox2.ValueMember = "Название";
             // 
             // label5
             // 
@@ -142,11 +177,15 @@
             // 
             // comboBox3
             // 
+            this.comboBox3.DataSource = this.направлениеОткрытияОкнаBindingSource;
+            this.comboBox3.DisplayMember = "Направление";
+            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Location = new System.Drawing.Point(311, 75);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(141, 21);
             this.comboBox3.TabIndex = 12;
+            this.comboBox3.ValueMember = "Направление";
             // 
             // label6
             // 
@@ -159,11 +198,15 @@
             // 
             // comboBox4
             // 
+            this.comboBox4.DataSource = this.проветриваниеBindingSource;
+            this.comboBox4.DisplayMember = "Тип проветривания";
+            this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox4.FormattingEnabled = true;
             this.comboBox4.Location = new System.Drawing.Point(458, 75);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(141, 21);
             this.comboBox4.TabIndex = 14;
+            this.comboBox4.ValueMember = "Тип проветривания";
             // 
             // label7
             // 
@@ -191,6 +234,7 @@
             this.button1.TabIndex = 16;
             this.button1.Text = "Добавить";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -200,6 +244,7 @@
             this.button2.TabIndex = 17;
             this.button2.Text = "Изменить";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -209,6 +254,7 @@
             this.button3.TabIndex = 18;
             this.button3.Text = "Удалить";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // dataGridView1
             // 
@@ -217,18 +263,154 @@
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.кодDataGridViewTextBoxColumn,
+            this.названиеDataGridViewTextBoxColumn,
+            this.ширинаDataGridViewTextBoxColumn,
+            this.высотаDataGridViewTextBoxColumn,
+            this.материалDataGridViewTextBoxColumn,
+            this.створкиDataGridViewTextBoxColumn,
+            this.направлениеОткрытияDataGridViewTextBoxColumn,
+            this.проветриваниеDataGridViewTextBoxColumn,
+            this.ценаDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.оконныйБлокBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(13, 103);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(760, 335);
+            this.dataGridView1.Size = new System.Drawing.Size(757, 335);
             this.dataGridView1.TabIndex = 20;
+            this.dataGridView1.Click += new System.EventHandler(this.dataGridView1_Click);
+            // 
+            // movedbDataSet
+            // 
+            this.movedbDataSet.DataSetName = "movedbDataSet";
+            this.movedbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // оконныйБлокBindingSource
+            // 
+            this.оконныйБлокBindingSource.DataMember = "оконный блок";
+            this.оконныйБлокBindingSource.DataSource = this.movedbDataSet;
+            // 
+            // оконный_блокTableAdapter
+            // 
+            this.оконный_блокTableAdapter.ClearBeforeFill = true;
+            // 
+            // кодDataGridViewTextBoxColumn
+            // 
+            this.кодDataGridViewTextBoxColumn.DataPropertyName = "Код";
+            this.кодDataGridViewTextBoxColumn.HeaderText = "Код";
+            this.кодDataGridViewTextBoxColumn.Name = "кодDataGridViewTextBoxColumn";
+            this.кодDataGridViewTextBoxColumn.ReadOnly = true;
+            this.кодDataGridViewTextBoxColumn.Width = 51;
+            // 
+            // названиеDataGridViewTextBoxColumn
+            // 
+            this.названиеDataGridViewTextBoxColumn.DataPropertyName = "Название";
+            this.названиеDataGridViewTextBoxColumn.HeaderText = "Название";
+            this.названиеDataGridViewTextBoxColumn.Name = "названиеDataGridViewTextBoxColumn";
+            this.названиеDataGridViewTextBoxColumn.ReadOnly = true;
+            this.названиеDataGridViewTextBoxColumn.Width = 82;
+            // 
+            // ширинаDataGridViewTextBoxColumn
+            // 
+            this.ширинаDataGridViewTextBoxColumn.DataPropertyName = "Ширина";
+            this.ширинаDataGridViewTextBoxColumn.HeaderText = "Ширина";
+            this.ширинаDataGridViewTextBoxColumn.Name = "ширинаDataGridViewTextBoxColumn";
+            this.ширинаDataGridViewTextBoxColumn.ReadOnly = true;
+            this.ширинаDataGridViewTextBoxColumn.Width = 71;
+            // 
+            // высотаDataGridViewTextBoxColumn
+            // 
+            this.высотаDataGridViewTextBoxColumn.DataPropertyName = "Высота";
+            this.высотаDataGridViewTextBoxColumn.HeaderText = "Высота";
+            this.высотаDataGridViewTextBoxColumn.Name = "высотаDataGridViewTextBoxColumn";
+            this.высотаDataGridViewTextBoxColumn.ReadOnly = true;
+            this.высотаDataGridViewTextBoxColumn.Width = 70;
+            // 
+            // материалDataGridViewTextBoxColumn
+            // 
+            this.материалDataGridViewTextBoxColumn.DataPropertyName = "Материал";
+            this.материалDataGridViewTextBoxColumn.HeaderText = "Материал";
+            this.материалDataGridViewTextBoxColumn.Name = "материалDataGridViewTextBoxColumn";
+            this.материалDataGridViewTextBoxColumn.ReadOnly = true;
+            this.материалDataGridViewTextBoxColumn.Width = 82;
+            // 
+            // створкиDataGridViewTextBoxColumn
+            // 
+            this.створкиDataGridViewTextBoxColumn.DataPropertyName = "Створки";
+            this.створкиDataGridViewTextBoxColumn.HeaderText = "Створки";
+            this.створкиDataGridViewTextBoxColumn.Name = "створкиDataGridViewTextBoxColumn";
+            this.створкиDataGridViewTextBoxColumn.ReadOnly = true;
+            this.створкиDataGridViewTextBoxColumn.Width = 74;
+            // 
+            // направлениеОткрытияDataGridViewTextBoxColumn
+            // 
+            this.направлениеОткрытияDataGridViewTextBoxColumn.DataPropertyName = "Направление открытия";
+            this.направлениеОткрытияDataGridViewTextBoxColumn.HeaderText = "Направление открытия";
+            this.направлениеОткрытияDataGridViewTextBoxColumn.Name = "направлениеОткрытияDataGridViewTextBoxColumn";
+            this.направлениеОткрытияDataGridViewTextBoxColumn.ReadOnly = true;
+            this.направлениеОткрытияDataGridViewTextBoxColumn.Width = 138;
+            // 
+            // проветриваниеDataGridViewTextBoxColumn
+            // 
+            this.проветриваниеDataGridViewTextBoxColumn.DataPropertyName = "Проветривание";
+            this.проветриваниеDataGridViewTextBoxColumn.HeaderText = "Проветривание";
+            this.проветриваниеDataGridViewTextBoxColumn.Name = "проветриваниеDataGridViewTextBoxColumn";
+            this.проветриваниеDataGridViewTextBoxColumn.ReadOnly = true;
+            this.проветриваниеDataGridViewTextBoxColumn.Width = 111;
+            // 
+            // ценаDataGridViewTextBoxColumn
+            // 
+            this.ценаDataGridViewTextBoxColumn.DataPropertyName = "Цена";
+            this.ценаDataGridViewTextBoxColumn.HeaderText = "Цена";
+            this.ценаDataGridViewTextBoxColumn.Name = "ценаDataGridViewTextBoxColumn";
+            this.ценаDataGridViewTextBoxColumn.ReadOnly = true;
+            this.ценаDataGridViewTextBoxColumn.Width = 58;
+            // 
+            // материалыДляОконBindingSource
+            // 
+            this.материалыДляОконBindingSource.DataMember = "материалы для окон";
+            this.материалыДляОконBindingSource.DataSource = this.movedbDataSet;
+            // 
+            // материалы_для_оконTableAdapter
+            // 
+            this.материалы_для_оконTableAdapter.ClearBeforeFill = true;
+            // 
+            // створкиBindingSource
+            // 
+            this.створкиBindingSource.DataMember = "створки";
+            this.створкиBindingSource.DataSource = this.movedbDataSet;
+            // 
+            // створкиTableAdapter
+            // 
+            this.створкиTableAdapter.ClearBeforeFill = true;
+            // 
+            // направлениеОткрытияОкнаBindingSource
+            // 
+            this.направлениеОткрытияОкнаBindingSource.DataMember = "направление открытия окна";
+            this.направлениеОткрытияОкнаBindingSource.DataSource = this.movedbDataSet;
+            // 
+            // направление_открытия_окнаTableAdapter
+            // 
+            this.направление_открытия_окнаTableAdapter.ClearBeforeFill = true;
+            // 
+            // проветриваниеBindingSource
+            // 
+            this.проветриваниеBindingSource.DataMember = "проветривание";
+            this.проветриваниеBindingSource.DataSource = this.movedbDataSet;
+            // 
+            // проветриваниеTableAdapter
+            // 
+            this.проветриваниеTableAdapter.ClearBeforeFill = true;
             // 
             // TypeWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(785, 450);
+            this.ClientSize = new System.Drawing.Size(782, 450);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -252,7 +434,14 @@
             this.Name = "TypeWindow";
             this.Text = "Типы оконных блоков";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TypeWindow_FormClosing);
+            this.Load += new System.EventHandler(this.TypeWindow_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.movedbDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.оконныйБлокBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.материалыДляОконBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.створкиBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.направлениеОткрытияОкнаBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.проветриваниеBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -280,5 +469,25 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private movedbDataSet movedbDataSet;
+        private System.Windows.Forms.BindingSource оконныйБлокBindingSource;
+        private movedbDataSetTableAdapters.оконный_блокTableAdapter оконный_блокTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn кодDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn названиеDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ширинаDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn высотаDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn материалDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn створкиDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn направлениеОткрытияDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn проветриваниеDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ценаDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource материалыДляОконBindingSource;
+        private movedbDataSetTableAdapters.материалы_для_оконTableAdapter материалы_для_оконTableAdapter;
+        private System.Windows.Forms.BindingSource створкиBindingSource;
+        private movedbDataSetTableAdapters.створкиTableAdapter створкиTableAdapter;
+        private System.Windows.Forms.BindingSource направлениеОткрытияОкнаBindingSource;
+        private movedbDataSetTableAdapters.направление_открытия_окнаTableAdapter направление_открытия_окнаTableAdapter;
+        private System.Windows.Forms.BindingSource проветриваниеBindingSource;
+        private movedbDataSetTableAdapters.проветриваниеTableAdapter проветриваниеTableAdapter;
     }
 }
