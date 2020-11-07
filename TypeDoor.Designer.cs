@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -67,15 +66,6 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(760, 316);
             this.dataGridView1.TabIndex = 41;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(614, 93);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(158, 23);
-            this.button4.TabIndex = 40;
-            this.button4.Text = "Справочник";
-            this.button4.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
@@ -261,7 +251,6 @@
             this.Controls.Add(this.comboBox5);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -283,6 +272,7 @@
             this.Controls.Add(this.label1);
             this.Name = "TypeDoor";
             this.Text = "Типы дверных блоков";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TypeDoor_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -292,7 +282,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;

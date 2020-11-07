@@ -16,5 +16,33 @@ namespace _2009_1956_DoorAndWindow
         {
             InitializeComponent();
         }
+
+        private void StoreDoor_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Hide();
+            if (Login.userID == 1)
+            {
+                Login.admin.Show();
+            }
+           
+            else
+            {
+                Login.login.Show();
+            }
+        }
+        //type door
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Login.typeDoor = new TypeDoor();
+            Login.typeDoor.Show();
+            this.Hide();
+        }
+        // dictionary door
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Login.dictionaryDoor = new DictionaryDoor();
+            Login.dictionaryDoor.Show();
+            this.Hide();
+        }
     }
 }

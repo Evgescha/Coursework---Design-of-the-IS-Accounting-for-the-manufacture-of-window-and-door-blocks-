@@ -20,6 +20,7 @@ namespace _2009_1956_DoorAndWindow
         public static StoreWindow storeWindow;
         public static TypeDoor typeDoor;
         public static TypeWindow typeWindow;
+        public static Users users;
         public static int userID = -1, userRole;
         public static string userFIO;
 

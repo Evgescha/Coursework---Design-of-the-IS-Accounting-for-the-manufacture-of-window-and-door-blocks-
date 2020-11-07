@@ -157,6 +157,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "DictionaryWindow";
             this.Text = "Оконный справочник";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DictionaryWindow_FormClosing);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox2.ResumeLayout(false);

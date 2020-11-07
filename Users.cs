@@ -10,17 +10,17 @@ using System.Windows.Forms;
 
 namespace _2009_1956_DoorAndWindow
 {
-    public partial class TypeWindow : Form
+    public partial class Users : Form
     {
-        public TypeWindow()
+        public Users()
         {
             InitializeComponent();
         }
 
-        private void TypeWindow_FormClosing(object sender, FormClosingEventArgs e)
+        private void Users_FormClosing(object sender, FormClosingEventArgs e)
         {
             this.Hide();
-            Login.storeWindow.Show();
+            Login.admin.Show();
         }
     }
 }

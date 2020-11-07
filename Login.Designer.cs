@@ -36,17 +36,17 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.movedbDataSet = new _2009_1956_DoorAndWindow.movedbDataSet();
-            this.пользователиBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.пользователиTableAdapter = new _2009_1956_DoorAndWindow.movedbDataSetTableAdapters.пользователиTableAdapter();
             this.кодDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.фИОDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.логинDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.парольDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.рольDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.пользователиBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.movedbDataSet = new _2009_1956_DoorAndWindow.movedbDataSet();
+            this.пользователиTableAdapter = new _2009_1956_DoorAndWindow.movedbDataSetTableAdapters.пользователиTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.movedbDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.пользователиBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.movedbDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -60,14 +60,14 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(92, 10);
+            this.textBox1.Location = new System.Drawing.Point(111, 10);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(130, 20);
             this.textBox1.TabIndex = 1;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(92, 36);
+            this.textBox2.Location = new System.Drawing.Point(111, 36);
             this.textBox2.Name = "textBox2";
             this.textBox2.PasswordChar = '*';
             this.textBox2.Size = new System.Drawing.Size(130, 20);
@@ -84,7 +84,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(16, 62);
+            this.button1.Location = new System.Drawing.Point(25, 62);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(206, 23);
             this.button1.TabIndex = 4;
@@ -94,7 +94,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(16, 91);
+            this.button2.Location = new System.Drawing.Point(25, 91);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(206, 23);
             this.button2.TabIndex = 5;
@@ -118,20 +118,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(298, 104);
             this.dataGridView1.TabIndex = 6;
             this.dataGridView1.Visible = false;
-            // 
-            // movedbDataSet
-            // 
-            this.movedbDataSet.DataSetName = "movedbDataSet";
-            this.movedbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // пользователиBindingSource
-            // 
-            this.пользователиBindingSource.DataMember = "пользователи";
-            this.пользователиBindingSource.DataSource = this.movedbDataSet;
-            // 
-            // пользователиTableAdapter
-            // 
-            this.пользователиTableAdapter.ClearBeforeFill = true;
             // 
             // кодDataGridViewTextBoxColumn
             // 
@@ -163,11 +149,25 @@
             this.рольDataGridViewTextBoxColumn.HeaderText = "Роль";
             this.рольDataGridViewTextBoxColumn.Name = "рольDataGridViewTextBoxColumn";
             // 
+            // пользователиBindingSource
+            // 
+            this.пользователиBindingSource.DataMember = "пользователи";
+            this.пользователиBindingSource.DataSource = this.movedbDataSet;
+            // 
+            // movedbDataSet
+            // 
+            this.movedbDataSet.DataSetName = "movedbDataSet";
+            this.movedbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // пользователиTableAdapter
+            // 
+            this.пользователиTableAdapter.ClearBeforeFill = true;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(538, 123);
+            this.ClientSize = new System.Drawing.Size(253, 123);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -179,8 +179,8 @@
             this.Text = "Форма входа";
             this.Load += new System.EventHandler(this.Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.movedbDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.пользователиBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.movedbDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

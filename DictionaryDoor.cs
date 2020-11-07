@@ -16,5 +16,11 @@ namespace _2009_1956_DoorAndWindow
         {
             InitializeComponent();
         }
+
+        private void DictionaryDoor_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Hide();            
+            Login.storeDoor.Show();            
+        }
     }
 }
