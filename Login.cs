@@ -88,7 +88,7 @@ namespace _2009_1956_DoorAndWindow
         }
         // check buttins
         private bool isFieldFill() {
-            if (textBox1.Text.Length < 1 && textBox2.Text.Length < 1)
+            if (textBox1.Text.Length < 1 || textBox2.Text.Length < 1)
                 return false;
             return true;
         }
